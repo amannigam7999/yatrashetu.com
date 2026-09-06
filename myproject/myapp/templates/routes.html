@@ -1,0 +1,108 @@
+<!-- <!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="{% static 'style.css'%}">
+</head> 
+ <body>-->
+
+<div id="lux-routes-live-region">
+  <section class="lux-routes-section" id="routes-results">
+    <div class="lux-routes-search-wrap">
+      <p class="lux-eyebrow">Smart route finder</p>
+      <p class="lux-routes-subtitle">Find buses by route name, pickup, or destination city.</p>
+
+      <form method="GET" action="{% url 'routes' %}" class="search-box lux-search-box" data-routes-search-form>
+        <div class="lux-search-field">
+          <span class="lux-search-icon" aria-hidden="true">⌕</span>
+          <input type="text" placeholder="Try: Dehradun, Haridwar, Luxury AC..." name="q" value="{{ query|default:'' }}">
+        </div>
+        <button type="submit" class="lux-btn lux-btn--primary lux-search-submit">Search route</button>
+      </form>
+
+      {% if query %}
+        <p class="lux-routes-meta">Showing <strong>{{ data|length }}</strong> route{{ data|length|pluralize }} for "<strong>{{ query }}</strong>"</p>
+      {% else %}
+        <p class="lux-routes-meta">Showing all <strong>{{ data|length }}</strong> route{{ data|length|pluralize }}.</p>
+      {% endif %}
+    </div>
+  </section>
+
+      <table class="rotes-tabel">
+            <tr>
+                <th>BUS NAME</th>
+                <th>PICK PLACE</th>
+                <th>PICK TIME</th>
+                <th>DESTINATION PLACE</th>
+                <th>DESTINATION TIME</th>
+                <th>CONTACT</th>
+            </tr>
+              {% for i in data %}
+            <tr>
+              <td>{{i.busname}}</td>
+              <td>{{i.pickplace}}</td>
+              <td>{{i.picktime}}</td>
+              <td>{{i.destplace}}</td>
+              <td>{{i.desttime}}</td>
+              <td>{{i.contact}}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="6" class="lux-no-routes">No routes found.{% if query %} Try another city or bus name.{% endif %}</td>
+            </tr>
+          {% endfor %}
+      </table>
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById("lux-routes-live-region");
+  if (!root || root.dataset.ajaxBound === "1") return;
+  root.dataset.ajaxBound = "1";
+
+  var form = root.querySelector("[data-routes-search-form]");
+  if (!form) return;
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var submitBtn = form.querySelector("button[type='submit']");
+    var originalBtnText = submitBtn ? submitBtn.textContent : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Searching...";
+    }
+
+    var action = form.getAttribute("action") || window.location.pathname;
+    var params = new URLSearchParams(new FormData(form));
+    var url = action + "?" + params.toString();
+
+    fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        var freshRoot = doc.getElementById("lux-routes-live-region");
+        if (!freshRoot) return;
+        root.replaceWith(freshRoot);
+        window.history.replaceState({}, "", url);
+      })
+      .catch(function () {
+        window.location.href = url;
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      });
+  });
+})();
+</script>
+    <!-- 
+</body>
+</html> -->

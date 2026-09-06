@@ -1,0 +1,86 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head> -->
+
+<!-- <body class="dy"> -->
+
+        <!-- ✅ GRID START -->
+        <div id="grid-section">
+            <div class="grid-container">
+                {% for i in page_obj %}
+                <div class="grid-item">
+                    {% if i.image %}
+                    <img src="{{ i.image.url }}">
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- ✅ PAGINATION -->
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <script>
+        (function () {
+          console.log("Gride script loading...");
+          var gridSection = document.getElementById("grid-section");
+          console.log("gridSection found:", !!gridSection);
+          if (!gridSection || gridSection.dataset.ajaxBound === "1") return;
+          gridSection.dataset.ajaxBound = "1";
+          console.log("Event listener attached");
+
+          gridSection.addEventListener("click", function (event) {
+            var link = event.target.closest("a");
+            if (!link || !link.href) return;
+
+            event.preventDefault();
+            console.log("Pagination link clicked:", link.href);
+
+            var url = link.href;
+
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+              .then(function (res) {
+                console.log("Fetch response status:", res.status);
+                return res.text();
+              })
+              .then(function (html) {
+                console.log("HTML fetched, parsing...");
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, "text/html");
+                var freshSection = doc.getElementById("grid-section");
+                if (!freshSection) {
+                  console.error("Could not find #grid-section in fetched HTML");
+                  return;
+                }
+                gridSection.replaceWith(freshSection);
+                window.history.replaceState({}, "", url);
+                console.log("Section replaced successfully");
+              })
+              .catch(function (error) {
+                console.error("Fetch failed:", error);
+                window.location.href = url;
+              });
+          });
+        })();
+        </script>
+
+

@@ -1,0 +1,112 @@
+{% load static %}
+<section class="lux-map-section" aria-labelledby="lux-map-heading">
+  <div class="lux-map-shell">
+    <header class="lux-map-header">
+      <p class="lux-eyebrow">OpenStreetMap</p>
+      <h2 id="lux-map-heading" class="lux-section-title">Explore India with a premium live map</h2>
+      <p class="lux-map-lead">Use the quick destination chips to jump across your top routes. Smooth pan, smooth zoom, beautiful experience.</p>
+    </header>
+
+    <div class="lux-map-toolbar" role="group" aria-label="Quick locations">
+      <button type="button" class="lux-map-chip is-active" data-map-target="dehradun">Dehradun</button>
+      <button type="button" class="lux-map-chip" data-map-target="rishikesh">Rishikesh</button>
+      <button type="button" class="lux-map-chip" data-map-target="haridwar">Haridwar</button>
+      <button type="button" class="lux-map-chip" data-map-target="kedarnath">Kedarnath</button>
+      <button type="button" class="lux-map-chip" data-map-target="badrinath">Badrinath</button>
+      <button type="button" class="lux-map-chip" data-map-target="gangotri">Gangotri</button>
+      <button type="button" class="lux-map-chip" data-map-target="yamunotri">Yamunotri</button>
+    </div>
+
+    <div class="lux-map-grid">
+      <div id="yatrasetu-osm-map" class="lux-map-canvas" role="region" aria-label="Interactive route map"></div>
+      <aside class="lux-map-side">
+        <h3 class="lux-map-side-title">Why this map feels premium</h3>
+        <ul class="lux-map-points">
+          <li>Instant jump to key yatra destinations</li>
+          <li>Elegant custom markers and route line</li>
+          <li>Fast, open and community powered OSM data</li>
+        </ul>
+        <a href="{% url 'routes' %}" class="lux-btn lux-btn--primary">Open full route table</a>
+      </aside>
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(function () {
+  function initMap() {
+    var el = document.getElementById("yatrasetu-osm-map");
+    if (!el || typeof L === "undefined") return;
+    if (el._leaflet_id) return;
+    var places = {
+      dehradun: { name: "Dehradun", latlng: [30.3165, 78.0322], zoom: 10, note: "Main route hub" },
+      rishikesh: { name: "Rishikesh", latlng: [30.0869, 78.2676], zoom: 11, note: "River gateway city" },
+      haridwar: { name: "Haridwar", latlng: [29.9457, 78.1642], zoom: 11, note: "Pilgrim boarding point" },
+      kedarnath: { name: "Kedarnath", latlng: [30.7352, 79.0669], zoom: 11, note: "Sacred mountain destination" },
+      badrinath: { name: "Badrinath", latlng: [30.7433, 79.4938], zoom: 11, note: "Temple valley route" },
+      gangotri: { name: "Gangotri", latlng: [30.9947, 78.9398], zoom: 11, note: "High altitude route point" },
+      yamunotri: { name: "Yamunotri", latlng: [31.0140, 78.4602], zoom: 11, note: "Yamuna origin trek base" }
+    };
+
+    var map = L.map(el, { scrollWheelZoom: true, zoomControl: false }).setView([30.3753, 78.0], 7);
+    L.control.zoom({ position: "bottomright" }).addTo(map);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
+    }).addTo(map);
+
+    function markerIcon() {
+      return L.divIcon({
+        className: "lux-map-marker-wrap",
+        html: "<span class='lux-map-marker-dot'></span>",
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+      });
+    }
+
+    Object.keys(places).forEach(function (key) {
+      var p = places[key];
+      L.marker(p.latlng, { icon: markerIcon() }).addTo(map)
+        .bindPopup("<strong>" + p.name + "</strong><br>" + p.note);
+    });
+
+    var routeLine = [
+      places.dehradun.latlng,
+      places.rishikesh.latlng,
+      places.haridwar.latlng,
+      places.kedarnath.latlng,
+      places.badrinath.latlng,
+      places.gangotri.latlng,
+      places.yamunotri.latlng
+    ];
+
+    L.polyline(routeLine, {
+      color: "#c9a962",
+      weight: 4,
+      opacity: 0.8,
+      lineCap: "round"
+    }).addTo(map);
+
+    var chips = document.querySelectorAll("[data-map-target]");
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var target = chip.getAttribute("data-map-target");
+        var place = places[target];
+        if (!place) return;
+        chips.forEach(function (b) { b.classList.remove("is-active"); });
+        chip.classList.add("is-active");
+        map.flyTo(place.latlng, place.zoom, { duration: 1.1, easeLinearity: 0.3 });
+      });
+    });
+
+    map.flyTo(places.dehradun.latlng, places.dehradun.zoom, { duration: 0.9 });
+    setTimeout(function () { map.invalidateSize(); }, 400);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>

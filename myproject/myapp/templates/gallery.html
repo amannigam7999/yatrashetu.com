@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - YatraSetu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="lux-body">
+    {% include 'headar.html' %}
+
+    <div id="gallery-section">
+        <section class="lux-gallery-section">
+            <div class="lux-gallery-header">
+                <p class="lux-eyebrow">Image Gallery</p>
+                <h2 class="lux-section-title"></h2>
+                <p class="lux-gallery-lead">Browse through our curated images.</p>
+            </div>
+
+            <div class="grid-container">
+                {% for i in page_obj %}
+                <div class="grid-item">
+                    {% if i.image %}
+                    <img src="{{ i.image.url }}" alt="Gallery image">
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">First</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script>
+    (function () {
+        console.log("Gallery script loading...");
+        var gallerySection = document.getElementById("gallery-section");
+        console.log("gallerySection found:", !!gallerySection);
+        if (!gallerySection || gallerySection.dataset.ajaxBound === "1") return;
+        gallerySection.dataset.ajaxBound = "1";
+        console.log("Event listener attached");
+
+        gallerySection.addEventListener("click", function (event) {
+            var link = event.target.closest("a");
+            if (!link || !link.href) return;
+
+            event.preventDefault();
+            console.log("Pagination link clicked:", link.href);
+
+            var url = link.href;
+
+            fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+                .then(function (res) {
+                    console.log("Fetch response status:", res.status);
+                    return res.text();
+                })
+                .then(function (html) {
+                    console.log("HTML fetched, parsing...");
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, "text/html");
+                    var freshSection = doc.getElementById("gallery-section");
+                    if (!freshSection) {
+                        console.error("Could not find #gallery-section in fetched HTML");
+                        return;
+                    }
+                    gallerySection.replaceWith(freshSection);
+                    window.history.replaceState({}, "", url);
+                    console.log("Section replaced successfully");
+                })
+                .catch(function (error) {
+                    console.error("Fetch failed:", error);
+                    window.location.href = url;
+                });
+        });
+    })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

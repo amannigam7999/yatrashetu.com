@@ -1,0 +1,1718 @@
+/* 🌌 Luxury Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #1a2a6c, #16213e);
+    color: #f5f5f5;
+}
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+/* body {
+    overflow-y: auto !important;
+} */
+
+
+nav {
+    background-color: #f30000;
+    color: #1a2a6c;
+}
+
+
+/* 🌌 Background */
+.Log{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+     background-color: #0a0f2c;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                url('/static/images/travel-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 📦 Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ✨ Form Card */
+.login-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+    color: white;
+}
+
+/* 🏷 Heading */
+.login-form h2 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* ✏️ Input */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 25px;
+    outline: none;
+
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* Placeholder color */
+.input-field::placeholder {
+    color: #ddd;
+}
+
+/* 🔥 Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+.login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,126,95,0.7);
+}
+
+/* ❌ Error */
+.error-msg {
+    color: #ff4b5c;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* 🌌 FOOTER BACKGROUND */
+.footer {
+    background-color: #ffffff;
+    color: #1a2a6c;
+    padding: 50px 20px;
+      margin-top: 50px;
+}
+
+/* 📦 Layout */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 🏷 Brand */
+.footer-brand h2 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    opacity: 1.8;
+    font-size: 14px;
+    color: #0a0f2c;
+}
+
+/* 📞 Contact */
+.footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    margin: 3px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    color: #0a0f2c;
+
+}
+
+/* 🔝 Button Container */
+.footer-top {
+    text-align: right;
+}
+
+/* 🔥 Button Design */
+.footer-top button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+
+    /* 💎 Gradient */
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+
+    /* Shadow */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+
+    transition: all 0.3s ease;
+}
+
+/* ✨ Hover effect */
+.footer-top button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-top {
+        text-align: center;
+    }
+}
+
+/* 🎯 Carousel container */
+.perent {
+    width: 70%;
+    margin: auto;
+    margin-top: 80px;
+    border-radius: 20px;
+    height: auto;        /* 🔥 fix */
+    overflow: visible;   /* 🔥 fix */
+}
+.grid-container {
+    position: relative;
+    z-index: 5;
+}
+/* 🖼 Images */
+.carousel-item img {
+    width: 100%;
+    height: auto;   /* 🔥 fix */
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* REMOVE BUTTON BACKGROUND */
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+
+/* CLEAN ICON */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0);
+    /* white arrow */
+    background-color: transparent !important;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Icon ko proper dikhane ke liye */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent !important;
+    filter: invert(1);
+}
+
+/* 📝 Premium Text */
+p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #dcdcdc;
+}
+
+/* 🔘 Luxury Button */
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+button:hover {
+    transform: translateY(-4px) scale(1.07);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* 🔍 Search Box (Glass Luxury) */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 50px auto;
+    padding: 14px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+}
+
+/* Hover Glow */
+.search-box:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Input */
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    flex: 1;
+    padding: 10px;
+    font-weight: 300;
+}
+
+/* Placeholder */
+.search-box input::placeholder {
+    color: #bbbbbb;
+    letter-spacing: 1px;
+}
+
+/* Search Button */
+.search-box button {
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+/* Button Hover */
+.search-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(252, 0, 255, 0.6);
+}
+
+.rotes-tabel {
+    border: 10px solid black;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}/* 🌌 Background */
+.dy {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #1a2a6c, #16213e);
+
+}
+
+/* 🔥 GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* 🔥 CARD DESIGN */
+.grid-item {
+    /* background: rgba(255, 255, 255, 0.08); */
+    background-color:rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 20px;
+
+    /* Glass effect */
+    backdrop-filter: blur(10px);
+
+    /* Shadow */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+    transition: all 0.4s ease;
+}
+
+/* 🔥 Hover effect (premium feel) */
+.grid-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* 🔥 Image */
+.grid-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* 🔥 PAGINATION CONTAINER */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+/* 🔥 BUTTON DESIGN */
+.pagination a {
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+
+    /* 💎 Luxury Gradient */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+
+    /* 💎 Shadow */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
+    /* Smooth */
+    transition: all 0.3s ease;
+}
+
+/* 🔥 Hover */
+.pagination a:hover {
+    transform: translateY(-3px) scale(1.05);
+
+    /* 🔥 Premium hover gradient */
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* 🔥 TEXT (Page X of Y) */
+.pagination span {
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 15px;
+
+    /* Glass look */
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+/* 🌌 Container */
+.feed-container {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 🔥 Feed Card */
+.feed-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+
+    transition: 0.4s;
+}
+
+.feed-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 🖼 Image */
+.feed-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* 📝 Content */
+.feed-content {
+    padding: 15px;
+    color: #fff;
+}
+
+.feed-content h3 {
+    margin: 0;
+}
+
+.feed-content p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ❤️ Actions */
+.feed-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* 🔥 Buttons */
+.feed-actions button {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+
+    transition: 0.3s;
+}
+
+.feed-actions button:hover {
+    transform: scale(1.1);
+}
+
+/* 🌍 Background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                url('/static/images/travel-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 📦 Container */
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+    text-align: center;
+    color: white;
+}
+
+
+
+/* 📦 Glass Container */
+.booking-container {
+    width: 380px;
+    margin: 70px auto;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+    text-align: center;
+}
+
+/* 🏷 Heading */
+.booking-heading {
+    margin-bottom: 25px;
+    font-size: 26px;
+
+    background: linear-gradient(90deg, #ffcc70, #ff7e5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ✏️ Inputs */
+.booking-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 14px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Placeholder */
+.booking-input::placeholder {
+    color: #ddd;
+}
+
+/* Focus glow */
+.booking-input:focus {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* Dropdown fix */
+.booking-input option {
+    color: black;
+}
+
+/* 🔥 Button */
+.booking-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(255,126,95,0.5);
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.booking-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(255,126,95,0.8);
+}
+
+/* ——— YatraSetu luxury layer (champagne, obsidian, brushed gold) ——— */
+:root {
+    --lux-bg-deep: #07080d;
+    --lux-bg-mid: #12151f;
+    --lux-panel: rgba(18, 22, 32, 0.72);
+    --lux-gold: #c9a962;
+    --lux-gold-soft: #e8d5a3;
+    --lux-ink: #0d0f14;
+    --lux-mist: #c8c4bc;
+    --lux-line: rgba(201, 169, 98, 0.28);
+    --lux-glow: rgba(201, 169, 98, 0.35);
+    --lux-font-display: "Playfair Display", Georgia, serif;
+    --lux-font-body: "DM Sans", system-ui, sans-serif;
+}
+
+.lux-body {
+    font-family: var(--lux-font-body);
+    color: #f2efe8;
+    background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(201, 169, 98, 0.12), transparent 55%),
+        radial-gradient(900px 500px at 88% 0%, rgba(90, 120, 160, 0.15), transparent 50%),
+        linear-gradient(165deg, var(--lux-bg-deep) 0%, #141824 42%, var(--lux-bg-mid) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.lux-body .navbar.bg-body-tertiary {
+    background: transparent !important;
+}
+
+/* Navigation */
+.lux-nav {
+    background: linear-gradient(180deg, rgba(7, 8, 13, 0.92) 0%, rgba(7, 8, 13, 0.55) 100%) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--lux-line);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+}
+
+.lux-brand {
+    font-family: var(--lux-font-display);
+    font-weight: 600;
+    font-size: 1.55rem;
+    letter-spacing: 0.04em;
+    color: var(--lux-gold-soft) !important;
+    text-shadow: 0 0 40px var(--lux-glow);
+}
+
+.lux-nav-link {
+    color: var(--lux-mist) !important;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    padding: 0.5rem 0.75rem !important;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.lux-nav-link:hover {
+    color: var(--lux-gold-soft) !important;
+    text-shadow: 0 0 18px var(--lux-glow);
+}
+
+.lux-nav-cta {
+    border: 1px solid var(--lux-line);
+    border-radius: 999px;
+    padding: 0.45rem 1.15rem !important;
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.18), rgba(201, 169, 98, 0.05));
+}
+
+.lux-nav-toggle {
+    border-color: var(--lux-line) !important;
+}
+
+/* Hero carousel area */
+.lux-body .perent {
+    width: min(1120px, 92vw);
+    margin-top: 2.5rem;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--lux-line);
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.lux-body .carousel-item img {
+    max-height: min(480px, 52vh);
+}
+
+.lux-body .perent + p {
+    font-family: var(--lux-font-display);
+    font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+    color: var(--lux-mist);
+    margin-top: 1.75rem;
+    letter-spacing: 0.02em;
+}
+
+.lux-body .perent ~ a button,
+.lux-body .perent + p + a button {
+    background: linear-gradient(135deg, #b8924a, #e8d5a3, #8f6f3a);
+    color: var(--lux-ink);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 30px var(--lux-glow);
+}
+
+/* OpenStreetMap */
+.lux-map-section {
+    width: min(1120px, 92vw);
+    margin: 3.5rem auto 2rem;
+}
+
+.lux-map-shell {
+    background: var(--lux-panel);
+    border: 1px solid var(--lux-line);
+    border-radius: 24px;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(16px);
+}
+
+.lux-map-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+}
+
+.lux-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--lux-gold);
+    margin-bottom: 0.5rem;
+}
+
+.lux-section-title {
+    font-family: var(--lux-font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    color: #faf7f0;
+    margin: 0 0 0.5rem;
+}
+
+.lux-map-lead,
+.lux-feed-lead {
+    color: var(--lux-mist);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.lux-map-canvas {
+    height: min(440px, 55vh);
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.lux-map-canvas .leaflet-control-attribution {
+    background: rgba(7, 8, 13, 0.82);
+    color: var(--lux-mist);
+    font-size: 0.65rem;
+}
+
+.lux-map-canvas .leaflet-control-attribution a {
+    color: var(--lux-gold);
+}
+
+.lux-map-toolbar {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.lux-map-chip {
+    border: 1px solid rgba(201, 169, 98, 0.28);
+    background: rgba(14, 17, 26, 0.75);
+    color: var(--lux-mist);
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.lux-map-chip:hover {
+    transform: translateY(-1px);
+    color: #fff;
+    border-color: rgba(201, 169, 98, 0.55);
+}
+
+.lux-map-chip.is-active {
+    background: linear-gradient(135deg, #b8924a, #e8d5a3);
+    color: var(--lux-ink);
+    border-color: transparent;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.lux-map-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(240px, 0.8fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.lux-map-side {
+    border: 1px solid var(--lux-line);
+    background: rgba(10, 13, 20, 0.68);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lux-map-side-title {
+    margin: 0;
+    font-family: var(--lux-font-display);
+    font-size: 1.15rem;
+    color: #faf7f0;
+}
+
+.lux-map-points {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--lux-mist);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.lux-map-points li {
+    margin-bottom: 0.35rem;
+}
+
+.lux-map-marker-wrap {
+    background: transparent;
+    border: 0;
+}
+
+.lux-map-marker-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    background: radial-gradient(circle at 30% 30%, #fff4d9 0%, #d1aa60 55%, #8f6f3a 100%);
+    box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.2), 0 0 14px rgba(201, 169, 98, 0.75);
+}
+
+.lux-map-canvas .leaflet-popup-content-wrapper,
+.lux-map-canvas .leaflet-popup-tip {
+    background: rgba(12, 14, 22, 0.94);
+    color: #f8f5ef;
+    border: 1px solid rgba(201, 169, 98, 0.3);
+}
+
+.lux-map-canvas .leaflet-control-zoom a {
+    background: rgba(12, 14, 22, 0.92);
+    color: var(--lux-gold-soft);
+    border: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.lux-map-canvas .leaflet-control-zoom a:hover {
+    background: rgba(201, 169, 98, 0.15);
+}
+
+@media (max-width: 880px) {
+    .lux-map-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lux-map-side {
+        order: 2;
+    }
+}
+
+/* Routes table */
+.lux-body .search-box {
+    width: min(720px, 92vw);
+    margin: 2.5rem auto 1.5rem;
+    background: rgba(12, 14, 22, 0.65);
+    border: 1px solid var(--lux-line);
+}
+
+.lux-body .rotes-tabel {
+    width: min(1120px, 94vw);
+    margin: 0 auto 2.5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--lux-line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.lux-body .rotes-tabel th {
+    background: linear-gradient(180deg, #1c2230 0%, #141824 100%);
+    color: var(--lux-gold-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: 1rem 0.75rem;
+}
+
+.lux-body .rotes-tabel td {
+    background: rgba(10, 12, 18, 0.55);
+    color: #e8e6e1;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0.85rem 0.65rem;
+    font-size: 0.88rem;
+}
+
+.lux-body .rotes-tabel tr:hover td {
+    background: rgba(201, 169, 98, 0.08);
+}
+
+/* Grid cards */
+.lux-body .grid-item {
+    background: var(--lux-panel);
+    border: 1px solid var(--lux-line);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.lux-body .grid-item img {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lux-body .pagination span {
+    color: var(--lux-mist);
+    background: rgba(12, 14, 22, 0.6);
+    border: 1px solid var(--lux-line);
+}
+
+.lux-body .pagination a {
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.35), rgba(90, 110, 140, 0.35));
+    border: 1px solid var(--lux-line);
+}
+
+/* Feed + curtain reveal */
+.lux-feed-section {
+    width: min(1120px, 92vw);
+    margin: 3rem auto 2.5rem;
+}
+
+.lux-feed-wrap {
+    background: var(--lux-panel);
+    border: 1px solid var(--lux-line);
+    border-radius: 24px;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(14px);
+}
+
+.lux-feed-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2rem;
+}
+
+.lux-feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.lux-feed-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 10, 16, 0.9);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.lux-feed-curtain {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 3;
+    background: linear-gradient(135deg, #1a1520 0%, #2a2318 40%, #c9a962 120%);
+    transition: transform 1.05s cubic-bezier(0.65, 0, 0.25, 1);
+    pointer-events: none;
+}
+
+.lux-feed-curtain--left {
+    left: 0;
+    transform: translateX(0);
+    border-right: 1px solid rgba(201, 169, 98, 0.25);
+}
+
+.lux-feed-curtain--right {
+    right: 0;
+    transform: translateX(0);
+    border-left: 1px solid rgba(201, 169, 98, 0.25);
+}
+
+.lux-feed-card.is-open .lux-feed-curtain--left {
+    transform: translateX(-102%);
+}
+
+.lux-feed-card.is-open .lux-feed-curtain--right {
+    transform: translateX(102%);
+}
+
+.lux-feed-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.lux-feed-media img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.92;
+}
+
+.lux-feed-copy {
+    padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.lux-feed-title {
+    font-family: var(--lux-font-display);
+    font-size: 1.15rem;
+    color: #faf7f0;
+    margin: 0 0 0.4rem;
+}
+
+.lux-feed-desc {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--lux-mist);
+    text-align: left;
+}
+
+.lux-feed-card--placeholder .lux-feed-title {
+    color: var(--lux-gold-soft);
+}
+
+/* Main carousel strip (Bootstrap) */
+.lux-body #carouselExample:not(.perent) {
+    width: min(1120px, 92vw);
+    margin: 2rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--lux-line);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5);
+}
+
+.lux-body #carouselExample:not(.perent) .carousel-caption {
+    background: linear-gradient(0deg, rgba(7, 8, 13, 0.92), transparent);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1.5rem 1.25rem;
+}
+
+.lux-body #carouselExample:not(.perent) .carousel-caption h3 {
+    font-family: var(--lux-font-display);
+    color: var(--lux-gold-soft);
+}
+
+/* Footer */
+.lux-footer {
+    background: linear-gradient(180deg, #0a0c12 0%, #07080d 100%) !important;
+    color: var(--lux-mist) !important;
+    border-top: 1px solid var(--lux-line);
+    margin-top: 4rem;
+}
+
+.lux-footer .footer-brand h2 {
+    font-family: var(--lux-font-display);
+    color: var(--lux-gold-soft) !important;
+}
+
+.lux-footer .footer-brand p,
+.lux-footer .footer-contact p {
+    color: var(--lux-mist) !important;
+}
+
+.lux-footer .footer-contact h3 {
+    color: #faf7f0;
+}
+
+.lux-footer .footer-top button {
+    background: linear-gradient(135deg, #b8924a, #e8d5a3);
+    color: var(--lux-ink);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Extra “expensive” polish */
+.lux-body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.lux-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.055) 0px, rgba(255, 255, 255, 0.055) 1px, transparent 1px, transparent 3px),
+        radial-gradient(circle at 20% 0%, rgba(201, 169, 98, 0.07), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.04), transparent 45%);
+    z-index: 0;
+}
+
+.lux-body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.lux-body ::selection {
+    background: rgba(201, 169, 98, 0.35);
+    color: #fff;
+}
+
+.lux-body a {
+    text-decoration: none;
+}
+
+.lux-body a:focus-visible,
+.lux-body button:focus-visible,
+.lux-body input:focus-visible {
+    outline: 2px solid rgba(201, 169, 98, 0.55);
+    outline-offset: 3px;
+    border-radius: 12px;
+}
+
+/* Premium buttons (avoid global button styling) */
+.lux-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    border: 1px solid rgba(201, 169, 98, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    user-select: none;
+}
+
+.lux-btn--primary {
+    color: var(--lux-ink);
+    background: linear-gradient(135deg, #b8924a, #f1e1b6, #8f6f3a);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45), 0 0 28px var(--lux-glow);
+}
+
+.lux-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.58), 0 0 34px var(--lux-glow);
+}
+
+.lux-btn--ghost {
+    color: var(--lux-gold-soft);
+    background: rgba(12, 14, 22, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.lux-btn--ghost:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201, 169, 98, 0.55);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero */
+.lux-hero {
+    width: min(1120px, 92vw);
+    margin: 1.25rem auto 0;
+}
+
+.lux-hero-shell {
+    position: relative;
+}
+
+.lux-hero-carousel {
+    margin: 0 auto;
+}
+
+.lux-hero-carousel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(7, 8, 13, 0.35) 0%, rgba(7, 8, 13, 0.88) 100%),
+        radial-gradient(700px 380px at 20% 12%, rgba(201, 169, 98, 0.25), transparent 60%);
+    pointer-events: none;
+}
+
+.lux-hero-copy {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: clamp(1.1rem, 3.2vw, 2rem);
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lux-hero-title {
+    font-family: var(--lux-font-display);
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    font-size: clamp(1.7rem, 4.2vw, 2.8rem);
+    color: #fbf8f1;
+    margin: 0.2rem 0 0.55rem;
+    text-shadow: 0 12px 60px rgba(0, 0, 0, 0.55);
+}
+
+.lux-hero-subtitle {
+    margin: 0 auto 1.1rem;
+    color: rgba(242, 239, 232, 0.86);
+    max-width: 56ch;
+    line-height: 1.55;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.lux-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+/* Make Bootstrap carousel controls feel premium */
+.lux-body .carousel-control-prev-icon,
+.lux-body .carousel-control-next-icon {
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+.lux-body .carousel-control-prev,
+.lux-body .carousel-control-next {
+    width: 12%;
+    opacity: 0.9;
+    transition: opacity 0.25s ease;
+}
+
+.lux-body .carousel-control-prev:hover,
+.lux-body .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .lux-btn,
+    .lux-feed-curtain,
+    .lux-body .grid-item,
+    .lux-body .pagination a,
+    .lux-body .feed-box,
+    .lux-body .carousel-control-prev,
+    .lux-body .carousel-control-next {
+        transition: none !important;
+    }
+}
+
+/* ——— Luxury login page ——— */
+.lux-login-page .lux-footer {
+    margin-top: 0;
+}
+
+.lux-login-stage {
+    position: relative;
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 4rem) 1.25rem;
+    overflow: hidden;
+}
+
+.lux-login-glow {
+    position: absolute;
+    width: min(720px, 90vw);
+    height: min(720px, 90vw);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 169, 98, 0.22) 0%, transparent 62%);
+    filter: blur(4px);
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    opacity: 0.85;
+}
+
+.lux-login-card {
+    position: relative;
+    width: min(420px, 100%);
+    padding: clamp(1.75rem, 4vw, 2.35rem);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(18, 22, 32, 0.88) 0%, rgba(10, 12, 18, 0.92) 100%);
+    border: 1px solid var(--lux-line);
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.lux-login-card-accent {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 3px;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(90deg, transparent, var(--lux-gold), transparent);
+    opacity: 0.9;
+}
+
+.lux-login-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.lux-login-title {
+    font-family: var(--lux-font-display);
+    font-size: clamp(1.65rem, 4vw, 2rem);
+    font-weight: 600;
+    color: #faf7f0;
+    margin: 0.35rem 0 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.lux-login-lead {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--lux-mist);
+}
+
+.lux-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.lux-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0;
+}
+
+.lux-field-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lux-gold);
+    font-weight: 600;
+}
+
+.lux-input {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(8, 10, 16, 0.65);
+    color: #f4f0e8;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.lux-input::placeholder {
+    color: rgba(200, 196, 188, 0.55);
+}
+
+.lux-input:hover {
+    border-color: rgba(201, 169, 98, 0.35);
+}
+
+.lux-input:focus {
+    border-color: rgba(201, 169, 98, 0.55);
+    background: rgba(12, 14, 22, 0.85);
+    box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.15);
+}
+
+.lux-login-submit {
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.95rem 1.2rem;
+}
+
+.lux-login-error {
+    margin: 1rem 0 0;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background: rgba(180, 40, 60, 0.18);
+    border: 1px solid rgba(255, 100, 120, 0.35);
+    color: #ffb4bc;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.lux-login-foot {
+    margin: 1.5rem 0 0;
+    text-align: center;
+}
+
+.lux-login-link {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lux-gold-soft);
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.lux-login-link:hover {
+    color: #fff;
+    text-shadow: 0 0 18px var(--lux-glow);
+}
+
+/* ——— Luxury booking page ——— */
+.lux-booking-page .lux-footer {
+    margin-top: 0;
+}
+
+.lux-booking-stage {
+    width: min(1180px, 94vw);
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.lux-booking-shell {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.35fr);
+    gap: 1.2rem;
+    align-items: stretch;
+}
+
+.lux-booking-panel,
+.lux-booking-form-card {
+    background: linear-gradient(145deg, rgba(17, 20, 30, 0.88) 0%, rgba(8, 10, 16, 0.92) 100%);
+    border: 1px solid var(--lux-line);
+    border-radius: 22px;
+    box-shadow:
+        0 30px 85px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.lux-booking-panel {
+    padding: clamp(1.4rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lux-booking-title {
+    font-family: var(--lux-font-display);
+    color: #faf7f0;
+    font-size: clamp(1.7rem, 3.6vw, 2.35rem);
+    margin: 0.25rem 0 0.65rem;
+    line-height: 1.15;
+}
+
+.lux-booking-subtitle {
+    margin: 0;
+    color: var(--lux-mist);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.lux-booking-points {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.lux-booking-points span {
+    position: relative;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+    color: #ede8df;
+}
+
+.lux-booking-points span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f1e1b6, #b8924a);
+    box-shadow: 0 0 10px rgba(201, 169, 98, 0.45);
+}
+
+.lux-booking-form-card {
+    padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.lux-booking-heading {
+    margin: 0 0 1.1rem;
+    color: #faf7f0;
+    font-family: var(--lux-font-display);
+    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
+}
+
+.lux-booking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.lux-booking-submit {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.95rem 1.2rem;
+}
+
+.lux-booking-form-card .lux-field:nth-child(1),
+.lux-booking-form-card .lux-field:nth-child(2),
+.lux-booking-form-card .lux-field:nth-child(5),
+.lux-booking-form-card .lux-field:nth-child(6),
+.lux-booking-form-card .lux-field:nth-child(7),
+.lux-booking-form-card .lux-field:nth-child(8) {
+    grid-column: span 1;
+}
+
+@media (max-width: 920px) {
+    .lux-booking-shell {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .lux-booking-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ——— Luxury routes search ——— */
+.lux-routes-section {
+    width: min(1120px, 94vw);
+    margin: 2.2rem auto 1.1rem;
+}
+
+.lux-routes-search-wrap {
+    border: 1px solid var(--lux-line);
+    border-radius: 22px;
+    padding: clamp(1.2rem, 2.8vw, 1.8rem);
+    background: linear-gradient(145deg, rgba(17, 20, 30, 0.86) 0%, rgba(9, 11, 18, 0.9) 100%);
+    box-shadow:
+        0 24px 65px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    backdrop-filter: blur(14px);
+}
+
+.lux-routes-subtitle {
+    margin: 0.35rem 0 1.15rem;
+    color: var(--lux-mist);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.lux-routes-meta {
+    margin: 0.85rem 0 0;
+    color: #e9e5dc;
+    font-size: 0.84rem;
+    letter-spacing: 0.03em;
+}
+
+.lux-routes-meta strong {
+    color: var(--lux-gold-soft);
+    font-weight: 700;
+}
+
+.lux-search-box {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(201, 169, 98, 0.22);
+    background: rgba(8, 10, 16, 0.56);
+    gap: 0.6rem;
+}
+
+.lux-search-field {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(12, 14, 22, 0.9);
+    overflow: hidden;
+}
+
+.lux-search-icon {
+    color: var(--lux-gold-soft);
+    opacity: 0.8;
+    font-size: 1rem;
+    padding: 0 0.85rem;
+}
+
+.lux-search-box input {
+    padding: 0.9rem 0.8rem 0.9rem 0.1rem;
+    font-size: 0.94rem;
+}
+
+.lux-search-box input::placeholder {
+    color: rgba(200, 196, 188, 0.56);
+}
+
+.lux-search-submit {
+    margin: 0;
+    flex-shrink: 0;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.68rem;
+}
+
+@media (max-width: 760px) {
+    .lux-search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .lux-search-submit {
+        width: 100%;
+    }
+}
+
+.lux-no-routes {
+    color: var(--lux-gold-soft) !important;
+    text-align: center;
+    font-weight: 600;
+    padding: 1.1rem 0.8rem !important;
+    background: rgba(201, 169, 98, 0.08) !important;
+}
+
+.lux-routes-hidden-note {
+    width: min(1120px, 94vw);
+    margin: 0 auto 2rem;
+    padding: 1rem 1.1rem;
+    border-radius: 14px;
+    border: 1px dashed rgba(201, 169, 98, 0.42);
+    background: rgba(201, 169, 98, 0.08);
+    color: var(--lux-gold-soft);
+    text-align: center;
+    font-size: 0.9rem;
+}
